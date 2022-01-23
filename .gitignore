@@ -2,3 +2,5 @@ HumanBodyEditor/Library/
 HumanBodyEditor/Logs/
 HumanBodyEditor/ProjectSettings/
 HumanBodyEditor/Temp/
+*.meta
+*.cache
