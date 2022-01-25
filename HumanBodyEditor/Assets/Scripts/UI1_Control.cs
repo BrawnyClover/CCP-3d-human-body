@@ -1,30 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI1_Control : MonoBehaviour
 {
-    public GameObject maleBody;
-    public GameObject femaleBody;
+    public GameObject targetBody;
 
     public Material mat1;
     public Material mat2;
 
+    static public Vector3[] baseVertices;
+
     private bool materialFlag = false;
+
+    private void Start()
+    {
+        baseVertices = targetBody.GetComponent<MeshFilter>().mesh.vertices;
+        Debug.Log("initialized base Verticies");
+    }
 
     public void OnClickToggleMesh()
     {
         if (materialFlag)
         {
-            maleBody.GetComponent<MeshRenderer>().material = mat1;
-            femaleBody.GetComponent<MeshRenderer>().material = mat1;
-        }
+            targetBody.GetComponent<MeshRenderer>().material = mat2;
+            }
         else
         {
-            maleBody.GetComponent<MeshRenderer>().material = mat2;
-            femaleBody.GetComponent<MeshRenderer>().material = mat2;
-        }
+            targetBody.GetComponent<MeshRenderer>().material = mat1;
+            }
         materialFlag = !materialFlag;
-        Debug.Log(maleBody.GetComponent<MeshRenderer>().material);
+        Debug.Log(targetBody.GetComponent<MeshRenderer>().material);
     }
+
 }

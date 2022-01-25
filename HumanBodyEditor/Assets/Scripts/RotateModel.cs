@@ -7,7 +7,7 @@ public class RotateModel
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && Input.mousePosition.x > 210)
+        if (Input.GetMouseButton(0) && Input.mousePosition.x > 310)
         {
             
             //Debug.Log(Input.mousePosition.x + " "+ Input.mousePosition.y);
